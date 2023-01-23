@@ -63,13 +63,20 @@ Em problemas de detecção procuramos identificar anomalias presente na base de 
 
 Na abordagem supervisionada escolhi o algoritmo Floresta Isolada (Isolation Forest). Esse algoritmo é baseado em árvores de decisão aleatória e consiste basicamente em escolher aleatoriamente uma variável do conjunto de dados e executar uma cisão aleatória que tem como vantagem sobre outros algoritmos de detccção de anomalias suportar variáveis categóricas. O tamanho do caminho que um ponto tem são quanto passos são necessários para sair do nó inicial até o nó final. Os pontos anômalos serão aqueles com caminho curto, pois estarão isolados, e os pontos “normais” terão um caminho mais longo, pois terão uma densidade maior. 
 
-Além disso foi realizada uma validação cruzada com kfold = 5 e a métrica utilizada para otimizar foi a f1, pois essa métrica é a média harmônica da precisão e revocação, ou seja, o valor mais alto possível de um F-score é 1,0, indicando precisão e recall perfeitos, e o menor valor possível é 0, se a precisão ou o recall forem zero.
+* Algoritmo não supervisionado
+
+
 
 **Otimização do modelo**
+
+No algoritmo de Floresta Isolada utilizou-se uma validação cruzada com kfold = 5 e a métrica utilizada para otimizar foi a f1, pois essa métrica é a média harmônica da precisão e revocação, ou seja, o valor mais alto possível de um F-score é 1,0, indicando precisão e recall perfeitos, e o menor valor possível é 0, se a precisão ou o recall forem zero.
 
 
 **Avaliação do modelo**
 
+<inserir imagem f1, recall, acuracia> 
+
+Um F-Score ntre 0.7-0.8 é um valor razoavel e quando mais rapido subir, melhor é pois teremos uma maior taxa de positivos verdadeiros e uma baixa taxa de positivos falsos. Esse algoritmo apresentou baixa precisão para identificar valores anomalos, se tivessemos ido na sorte teriamos também um valor de 50% de chance de acerto. Por isso desenvolvemos o algoritmo não supervisionado. Olhando a matriz de confusão, buscamos diminuir os valores de Negativos Falsos, em outras palavras o algoritmo está classificando como 0 alguém que é tipo 1. 
 
 # Resultados e conclusão
 
