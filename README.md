@@ -57,9 +57,14 @@ A base de dados também apresentava variáveis categóricas que foram transforma
 
 Utilizou-se o algoritmo ExtraTreeClassifier para verificação inicial de qual variável possuia mais relevância para a deteção de fraude. Com isso notou-se que a variável tempo e media_id possuem relevância de mesma ordem e por isso elas continuaram no modelo final a ser desenvolvido. A imagem abaixo mostra a tabela extraída do algoritmo ExtraTreeClassifier.
 
-Feita essa verificação de features que contribuem para o modelo, o primeiro algoritmo utilizado foi o Floresta Isolada (Isolation Forest). Optou-se em utilizar esse algoritmo, pois em problemas de detecção procuramos identificar anomalias presente na base de dados. Essa técnica nos indica quais pontos do conjunto de dados apresentam comportamento diferente dos demais. Com a detecção dos pontos anomalos 
+Em problemas de detecção procuramos identificar anomalias presente na base de dados. Para a detecção de anomalia existem duas perpectivas para modelarmos, a primeira com aprendizado supervisionado e aprendizado não supervisionado.
 
-Outro algoritmo utilizado p
+* Algoritmo supervisionado
+
+Na abordagem supervisionada escolhi o algoritmo Floresta Isolada (Isolation Forest). Esse algoritmo é baseado em árvores de decisão aleatória e consiste basicamente em escolher aleatoriamente uma variável do conjunto de dados e executar uma cisão aleatória que tem como vantagem sobre outros algoritmos de detccção de anomalias suportar variáveis categóricas. O tamanho do caminho que um ponto tem são quanto passos são necessários para sair do nó inicial até o nó final. Os pontos anômalos serão aqueles com caminho curto, pois estarão isolados, e os pontos “normais” terão um caminho mais longo, pois terão uma densidade maior. 
+
+Além disso foi realizada uma validação cruzada com kfold = 5 e a métrica utilizada para otimizar foi a f1, pois essa métrica é a média harmônica da precisão e revocação, ou seja, o valor mais alto possível de um F-score é 1,0, indicando precisão e recall perfeitos, e o menor valor possível é 0, se a precisão ou o recall forem zero.
+
 **Otimização do modelo**
 
 
