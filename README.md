@@ -46,10 +46,20 @@ Diante disso, foi identificado que a maioria das fraudes vinham de IPs dos EUA. 
 **Feature Engineering**
 
 
+Na base de dados existia um desbalanceamento para os valores da variável target ('default'), onde o dataset possuía 70% de amostras para valores de empréstimos negados (0) e apenas 30% de valores para empréstimos concedidos (1), conforme demonstrado na figura abaixo. Isso iria ocasionar no desenvolvimento de um algoritmo que seria bom para negar empréstimos e não seria bom para aprova-los. Devido a isso, os dados aplicou-se oversampling com a técnica Synthetic Minority Oversampling Technique (SMOTE), explicada em [1].
 
+A base de dados também apresentava variáveis categóricas que foram transformadas em variáveis numéricas através do método OneHotEncoder disponível na biblioteca do Scikit Learn. 
 **Seleção de features**
 
+- Tempo = Tempo calculado entre o momento de compra e momento de cadastro.
+- Media_id = média de dispositivos(IP) do usuário
+- Pais = variável 
 
+Utilizou-se o algoritmo ExtraTreeClassifier para verificação inicial de qual variável possuia mais relevância para a deteção de fraude. Com isso notou-se que a variável tempo e media_id possuem relevância de mesma ordem e por isso elas continuaram no modelo final a ser desenvolvido. A imagem abaixo mostra a tabela extraída do algoritmo ExtraTreeClassifier.
+
+Feita essa verificação de features que contribuem para o modelo, o primeiro algoritmo utilizado foi o Floresta Isolada (Isolation Forest). Optou-se em utilizar esse algoritmo, pois em problemas de detecção procuramos identificar anomalias presente na base de dados. Essa técnica nos indica quais pontos do conjunto de dados apresentam comportamento diferente dos demais. Com a detecção dos pontos anomalos 
+
+Outro algoritmo utilizado p
 **Otimização do modelo**
 
 
