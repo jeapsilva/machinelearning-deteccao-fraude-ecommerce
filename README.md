@@ -7,6 +7,8 @@
 
 Uma loja virtual verificou que no último ano houve muitos casos de fraude no cartão crédito. O cliente comprava através do gateway de pagamento e após receber o produto em casa, a compra era cancelada no cartão de crédito. Logo a loja virtual além de perder o valor da venda, também perde o valor de custo do seu produto. Para evitar isso, a loja buscou utilizar a sua série histórica de compras para o desenvolvimento de um algoritmo para detecção de fraude nas compras que eram feitas no ecommerce.
 
+Temos disponíveis dois datasets, sendo um referente a movimentação na loja virtual e outro que contêm uma descrição de IPs por país. 
+
 # Features
 
 
@@ -27,14 +29,19 @@ Uma loja virtual verificou que no último ano houve muitos casos de fraude no ca
 # Descrição da Solução
 **Solução**
 
+Atualmente para fazer a detecção de fraudes em cartão de crédito utiliza-se diversos métodos de Machine Learning para detectar fraude em dados transacionais de cartão de crédito. Na literatura há diversos algoritmos para realizar a classificação do usuário para essa detecção, como Naive Bayes, Random Forest, Regressão Logística e máquinas de vetores de suporte. 
 
+Aqui nesse projeto optou-se por ampliar e explorar outros algoritmos de classificação para que possamos fazer uma análise do comportamento que tais algoritmos tem. Portanto, aqui utilizaremos o algortimo ExtraTreeClassifier, Floresta Isolada e OneClassSVM disponívels na biblioteca do Scikit Learn. 
 
 **Limpeza e manipulação dos dados**
 
+Na fase de limpeza dos dados buscou-se fazer a transformação do tipo de variáveis, verificação de valores nulos e NaN. Em seguida, buscou-se visualizar as distribuições das features, para que possamos identificar outliers. Feita essa identificação foi realizada a remoção dos outliers para que esses não influenciassem no algoritmo. 
 
 **Análise Exploratória de Dados (EDA)**
 
+Na análise exploratória de dados buscou-se analisar a correlação entre features e casos de fraude, como por exemplo se havia muita discrepância entre os valores médio de compra e a presença de fraude. De todas essas análises feitas, houve identicação de 3 variáveis suspeitas em casos de fraude: local do IP, número de dispositivos e tempo entre cadastro/compra. 
 
+Diante disso, foi identificado que a maioria das fraudes vinham de IPs dos EUA. Também foi identificado que usuários que utilizam diversos IPs para logar na loja também são grandes suspeitos para fraude. Por fim, o tempo curto entre o cadastro e o ato da compra também indicava fraudes. 
 
 **Feature Engineering**
 
