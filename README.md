@@ -5,16 +5,24 @@
 
 # Descrição do projeto
 
-
+Uma loja virtual verificou que no último ano houve muitos casos de fraude no cartão crédito. O cliente comprava através do gateway de pagamento e após receber o produto em casa, a compra era cancelada no cartão de crédito. Logo a loja virtual além de perder o valor da venda, também perde o valor de custo do seu produto. Para evitar isso, a loja buscou utilizar a sua série histórica de compras para o desenvolvimento de um algoritmo para detecção de fraude nas compras que eram feitas no ecommerce.
 
 # Features
 
 
 | Feature  | Descrição |
 | ------------- | ------------- |
-| x  | description |
-
-
+| fraude  | variável binária que identifica a fraude (1) ou não (0) |
+| id  | identificação do cliente na loja |
+| cadastro  | data e horário do cadastrp |
+| compra  | data e horário da compra |
+| valor  | valor da compra |
+| id_dispositivo  | string que mapeia a identificação do dispositivo do cliente |
+| fonte  | Local de origem do tráfego do cliente |
+| browser  | navegador utilizado |
+| genero  | gênero do usuário |
+| idade  | idade do cliente |
+| Ip  | Ip do dispositivo do cliente |
 
 # Descrição da Solução
 **Solução**
