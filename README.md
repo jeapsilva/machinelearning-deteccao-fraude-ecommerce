@@ -92,7 +92,7 @@ Um F-Score ntre 0.7-0.8 é um valor razoavel e quando mais rapido subir, melhor 
 
 # Pessoas Desenvolvedoras do Projeto
 
-<a href="https://github.com/jesapsilva">Jéssica Aparecida Silva - Cientista de dados</a>
+<a href="https://github.com/jeapsilva">Jéssica Aparecida Silva - Cientista de dados</a>
 
 # Licença
 
